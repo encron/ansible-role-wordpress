@@ -1,0 +1,12 @@
+# roles/wordpress/defaults/main.yml
+---
+
+wordpress_database: wp_db
+wordpress_user: wp_user
+wordpress_password: wppassword
+wordpress_home_url: "http://www.example.com"
+wordpress_site_title: Test Site
+wordpress_admin_user: admin
+wordpress_admin_user_pass: admin
+wordpress_admin_email: example@mail.com
+remote_wordpress_dir: /usr/share/wordpress
