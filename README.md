@@ -28,7 +28,7 @@ None
 This role requires a database server (local or remote) such as MariaDB to store the Wordpress data.  
 The database service must have a user and password for Worpress which is exactly the same as defined in the variables of this role.  
 
-This role also requires an Apache webservice to be running.  
+It's also necessary to have an Apache webservice running.  
 
 ## Defining your database host
 
