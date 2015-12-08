@@ -15,7 +15,6 @@
            --dbuser="{{ wordpress_user }}"
            --dbpass="{{ wordpress_password }}"
   when: wordpress_is_downloaded.stat.exists == False
-  remote_user: "{{ remote_deploy_user }}"
 
 - name: Is WordPress installed?
   shell: /usr/local/bin/wp core is-installed
