@@ -1,6 +1,6 @@
 # roles/wordpress/defaults/main.yml
 ---
-
+wordpress_database_address: localhost
 wordpress_database: wp_db
 wordpress_user: wp_user
 wordpress_password: wppassword
