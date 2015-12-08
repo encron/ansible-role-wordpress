@@ -30,5 +30,7 @@ You can choose to use a local or remote database by specifying your database's a
 wordpress_database_address: yourdatabaselocation
 ```
 
+## License
 
+MIT
 
