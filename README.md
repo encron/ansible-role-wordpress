@@ -19,7 +19,7 @@ None
 | `wordpress_home_url` | 'http://www.example.com' | The home url of the wordpress application.               |
 | `wordpress_admin_user` | 'admin' | The admin user of the wordpress application.               |
 | `wordpress_admin_user_pass` | 'admin' | The admin user's password.              |
-| `wordpress_admin_email` | 'toon.lamberigts@gmail.com' | The email address of the admin user.               |
+| `wordpress_admin_email` | 'admin@mail.com' | The email address of the admin user.               |
 | `wordpress_dir` | '/usr/share/wordpress' | The home directory of the wordpress application.              |
 | `wordpress_site_title` | 'Test Site' | The title of your wordpress application |
 
