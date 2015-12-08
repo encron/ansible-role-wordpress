@@ -17,7 +17,7 @@
 - name: Create WordPress directory
   action: file
   args:
-    path: "{{ remote_wordpress_dir }}"
+    path: "{{ wordpress_dir }}"
     mode: 0755
     state: directory
 
@@ -40,7 +40,7 @@
   when: wpcli_is_downloaded.stat.exists == False
 
 - name: Is WordPress downloaded?
-  stat: path="{{ remote_wordpress_dir }}/index.php"
+  stat: path="{{ wordpress_dir }}/index.php"
   register: wordpress_is_downloaded
 
 - name: Download WordPress
