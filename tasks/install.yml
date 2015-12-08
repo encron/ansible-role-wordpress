@@ -46,6 +46,6 @@
 - name: Download WordPress
   shell: /usr/local/bin/wp core download
   args:
-    chdir: "{{ remote_wordpress_dir }}"
+    chdir: "{{ wordpress_dir }}"
   when: wordpress_is_downloaded.stat.exists == False
   
