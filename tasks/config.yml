@@ -10,7 +10,7 @@
 
 - name: Configure WordPress
   shell: /usr/local/bin/wp core config
-           --path="{{ remote_wordpress_dir }}"
+           --path="{{ wordpress_dir }}"
            --dbname="{{ wordpress_database }}"
            --dbuser="{{ wordpress_user }}"
            --dbpass="{{ wordpress_password }}"
@@ -20,14 +20,14 @@
 - name: Is WordPress installed?
   shell: /usr/local/bin/wp core is-installed
   args:
-    chdir: "{{ remote_wordpress_dir }}/"
+    chdir: "{{ wordpress_dir }}/"
   register: wordpress_is_installed
   ignore_errors: True  
   
 - name: Install WordPress tables
   sudo: yes
   shell: /usr/local/bin/wp core install
-            --path="{{ remote_wordpress_dir }}"
+            --path="{{ wordpress_dir }}"
             --url="{{ wordpress_home_url }}"
             --title="{{ wordpress_site_title }}"
             --admin_user="{{ wordpress_admin_user }}"
@@ -49,7 +49,7 @@
 - name: Download Salts
   get_url:
     url: https://api.wordpress.org/secret-key/1.1/salt/
-    dest: "{{ remote_wordpress_dir }}/wp-salts.php"
+    dest: "{{ wordpress_dir }}/wp-salts.php"
     seuser: system_u
     setype: httpd_sys_script_exec_t
     force: no
@@ -57,7 +57,7 @@
   
 - name: Insert PHP start tag in Salts file
   lineinfile:
-    dest: "{{ remote_wordpress_dir }}/wp-salts.php"
+    dest: "{{ wordpress_dir }}/wp-salts.php"
     line: '<?php'
     state: present
     insertbefore: BOF
@@ -65,7 +65,7 @@
 
 - name: Insert PHP end tag in Salts file
   lineinfile:
-    dest: "{{ remote_wordpress_dir }}/wp-salts.php"
+    dest: "{{ wordpress_dir }}/wp-salts.php"
     line: '?>'
     state: present
     insertafter: EOF
